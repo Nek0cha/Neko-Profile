@@ -1,17 +1,14 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro'
+import profile from '../data/profile.json'
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title={profile.name}>
+  <h1>{profile.name}</h1>
+  <p>{profile.title}</p>
+  <p>{profile.bio}</p>
+  <ul>
+    {profile.links.map((link) => (
+      <li><a href={link.url}>{link.label}</a></li>
+    ))}
+  </ul>
+</BaseLayout>

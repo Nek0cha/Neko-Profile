@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Zen Kaku Gothic New", sans-serif;
+}
