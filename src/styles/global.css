@@ -86,3 +86,17 @@ a {
   filter: blur(calc(var(--scroll-progress) * 20px));
   transition: filter 0.1s linear;
 }
+
+/* SafariのView Transitions実装は、固定背景+backdrop-filterを含むページだと
+   遷移スナップショットの合成中に一瞬白飛びすることがある（WebKit側の癖で、
+   transition:persist等での回避も別の不具合を招いたため断念）。
+   -webkit-touch-callout はWebKit系ブラウザだけが解釈するプロパティなので、
+   これを使ってSafari/iOS Safari限定でクロスフェード自体を無効化し、
+   瞬時切り替え（アニメーション無し）にフォールバックする */
+@supports (-webkit-touch-callout: none) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
