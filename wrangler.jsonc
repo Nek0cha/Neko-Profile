@@ -1,0 +1,10 @@
+{
+  "name": "neko-profile",
+  "compatibility_date": "2026-08-27",
+  // Astroは output: "static" でビルドしているので、Workerスクリプトは不要。
+  // dist/ を静的アセットとしてそのまま配信する設定。
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}
