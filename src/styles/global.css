@@ -55,12 +55,6 @@
   --os-handle-bg-active: var(--scrollbar-thumb-hover);
 }
 
-/* iOS SafariのView Transitions中、bodyの背景が反映される前にhtmlの
-   デフォルト白背景がちらつくのを防ぐため、htmlにも明示的に背景色を指定 */
-html {
-  background-color: var(--color-bg);
-}
-
 body {
   background-color: var(--color-bg);
   color: var(--color-ink);
