@@ -16,26 +16,31 @@
   --color-line: #E5E4DF;
 }
 
-/* iOS風の細くて半透明なスクロールバー
+/* 細くて半透明なカスタムスクロールバー。マウス/トラックパッドを持つ端末だけに限定して、
+   タッチ端末（スマホ等）はOSデフォルトのスクロールバーにそのまま任せる
+   （scrollbar-width/scrollbar-color はiOS Safariも対応してきてるので、
+   　pointer:coarseにも無条件でかかるとネイティブの見た目に干渉してしまうため）
    ※Chrome/Edgeは標準の scrollbar-color を ::-webkit-scrollbar 系より優先するので、
    　両方とも同じ --scrollbar-thumb 変数を参照させて色がズレないようにしてる */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-thumb);
-  border-radius: 9999px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background-color: var(--scrollbar-thumb-hover);
-}
+@media (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover);
+  }
 
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--scrollbar-thumb) transparent;
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) transparent;
+  }
 }
 
 /* OverlayScrollbars用のカスタムテーマ（JS初期化後はこっちが表示される）
