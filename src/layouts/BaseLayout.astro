@@ -8,8 +8,6 @@ import bgImg from '../assets/background.jpeg'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 
-import data from '../data/data.json'
-
 interface Props {
   title: string
   description?: string
@@ -25,6 +23,9 @@ const ogImageUrl = image ? new URL(image, Astro.site) : undefined
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <ClientRouter />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

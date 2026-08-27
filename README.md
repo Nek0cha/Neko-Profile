@@ -1,43 +1,58 @@
-# Astro Starter Kit: Minimal
+# ねこ プロフィールサイト
+
+Astro (v7, static output) で構築した個人プロフィール / リンクインバイオサイト。Tailwind CSS v4 でスタイリングしている。
+
+## 技術スタック
+
+- [Astro](https://astro.build) v7（`output: "static"`）
+- [Tailwind CSS v4](https://tailwindcss.com)（`@tailwindcss/vite` 経由、CSS-first config）
+- [astro-icon](https://github.com/natemoo-re/astro-icon)（[Iconify](https://icon-sets.iconify.design/) 経由でアイコンをビルド時にSVG埋め込み）
+- [Lenis](https://github.com/darkroomengineering/lenis)（スムーススクロール）
+- [OverlayScrollbars](https://kingsora.github.io/OverlayScrollbars/)（クロスブラウザで統一されたカスタムスクロールバー）
+- [@astrojs/sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/)（sitemap自動生成）
+
+## セットアップ
 
 ```sh
-pnpm create astro@latest -- --template minimal
+pnpm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## コマンド一覧
 
-## 🚀 Project Structure
+| コマンド | 内容 |
+| :--- | :--- |
+| `pnpm dev` | 開発サーバーを起動（`http://localhost:4321`） |
+| `astro dev --background` | 開発サーバーをバックグラウンドで起動。`astro dev stop` / `status` / `logs` で管理 |
+| `pnpm build` | 本番ビルドを `./dist/` に出力 |
+| `pnpm preview` | ビルド結果をローカルでプレビュー |
+| `pnpm astro check` | 型チェック |
 
-Inside of your Astro project, you'll see the following folders and files:
+## コンテンツの編集
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+`src/data/data.json` がサイト全体のコンテンツの単一ソース。基本的にページ（`.astro`ファイル）を直接編集する必要はなく、このJSONを書き換えるだけで内容が反映される。
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- `name` / `bio` / `statusText` / `detailedBio`：プロフィール情報。`detailedBio` は自己紹介セクションの各段落（配列の1要素＝1段落）
+- `links`：SNS・連絡先リンクの一覧
+  - `title` / `description` / `url` / `handle` / `themeColor`：表示内容とホバー時の配色
+  - `icon`：[Iconify](https://icon-sets.iconify.design/) の `コレクション名:アイコン名` 形式（例：`simple-icons:twitter`）
+  - `copy: true` を付けると、リンクとして開く代わりにクリック時に `url` の値をクリップボードにコピーするボタンになる。メールアドレスや、期限切れの可能性がある個人へのフレンド申請リンクの代わりにユーザー名だけ渡したい場合などに使う
+- `works`：作品一覧（`title` / `description` / `url`）。カード下部にドメインが自動表示される
+- `pages.<page>.title` / `pages.<page>.ogp`：ページごとの `<title>` と OGP（`title` / `description` / `image`）
+- `pages.nekochan`：隠しページ（イースターエッグ）用のコンテンツ。footerのコピーライト表記の名前部分からリンクしている
+- `pages.notFound`：404ページのコンテンツ
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## OGP画像
 
-Any static assets, like images, can be placed in the `public/` directory.
+`public/images/ogp/` に 1200×630px の PNG を配置し、`data.json` の `pages.<page>.ogp.image` から参照する（パスはドメインルートからの絶対パス）。
 
-## 🧞 Commands
+新しく作る／差し替える場合は、サイトと同じ配色・フォントのHTMLテンプレートをブラウザ（Playwright等）で1200×630（高品質にしたい場合は2倍サイズで撮って縮小）でスクリーンショットする方法で作成した。
 
-All commands are run from the root of the project, from a terminal:
+## デプロイ
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+Cloudflare Pages を想定。`output: "static"` のため専用アダプターは不要で、`pnpm build` の出力である `./dist/` をそのままデプロイできる。
 
-## 👀 Want to learn more?
+`astro.config.mjs` の `site`（`https://ny4n.net`）は OGP画像の絶対URL化と `sitemap.xml` の生成に使われるため、実際に公開するドメインと一致させること。
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 隠しページについて
+
+`/nekochan` は `sitemap.xml` から除外し、`<meta name="robots" content="noindex, nofollow">` を付与している（`robots.txt` には記載していない。記載すると逆に存在を公表してしまうため）。

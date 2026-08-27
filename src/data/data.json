@@ -4,11 +4,11 @@
   "bio": "仲の良い友達が欲しいです。好きな絵文字は🫠です。",
   "statusText": "さらば夏休み",
   "detailedBio": [
-    "名前: ねこ",
+    "ねこっていいます",
     "🫠が好きです",
-    "趣味はプログラミングです",
-    "ゲームも好きです",
-    "Discordで友達募集中です"
+    "趣味はプログラミングです TypeScriptとかJavaがメインです",
+    "ゲームも好きです マイクラとかNTEとかしてます",
+    "Discordで友達募集中です！！友達になろう！！"
   ],
   "links": [
     {
@@ -18,6 +18,15 @@
       "icon": "simple-icons:twitter",
       "handle": "@zz223_",
       "themeColor": "#59C4FF"          
+    },
+    {
+      "title": "Discord",
+      "description": "友達募集中です",
+      "url": "ny4ffle",
+      "copy": true,
+      "icon": "simple-icons:discord",
+      "handle": "ny4ffle",
+      "themeColor": "#5B64CF"
     },
     {
       "title": "Discord",
@@ -62,7 +71,8 @@
     {
       "title": "メール",
       "description": "何かあればここまで",
-      "url": "mailto:contact@ny4n.net",
+      "url": "contact@ny4n.net",
+      "copy": true,
       "icon": "material-symbols:mail-outline",
       "handle": "contact@ny4n.net",
       "themeColor": "#5C5C5C"

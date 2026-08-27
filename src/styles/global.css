@@ -3,8 +3,8 @@
 :root {
   --scroll-progress: 0;
   --footer-h: 4rem; /* Footer.astro の h-16 と合わせる */
-  --scrollbar-thumb: rgba(45, 61, 74, 0.35); /* --color-accent の半透明版 */
-  --scrollbar-thumb-hover: rgba(45, 61, 74, 0.55);
+  --scrollbar-thumb: rgba(45, 61, 74, 0.6); /* --color-accent の半透明版 */
+  --scrollbar-thumb-hover: rgba(45, 61, 74, 0.8);
 }
 
 @theme {
@@ -20,7 +20,7 @@
    ※Chrome/Edgeは標準の scrollbar-color を ::-webkit-scrollbar 系より優先するので、
    　両方とも同じ --scrollbar-thumb 変数を参照させて色がズレないようにしてる */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 10px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -42,7 +42,7 @@
    ※ .os-scrollbar 側の既定値と詳細度が同じで読み込み順で負けるので、
    　 .os-scrollbar.os-theme-neko で詳細度を上げて確実に勝たせてる */
 .os-scrollbar.os-theme-neko {
-  --os-size: 6px;
+  --os-size: 10px;
   --os-padding-perpendicular: 2px;
   --os-padding-axis: 2px;
   --os-track-border-radius: 9999px;

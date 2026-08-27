@@ -13,13 +13,12 @@ const { title, ogp } = data.pages.links
 
       <ul class="space-y-3">
         {data.links.map((link) => {
-          const email = link.url.startsWith('mailto:') ? link.url.replace('mailto:', '') : null
           return (
             <li>
-              {email ? (
+              {link.copy ? (
                 <button
                   type="button"
-                  data-copy-email={email}
+                  data-copy-value={link.url}
                   style={`--theme-color: ${link.themeColor}`}
                   class="copy-btn group flex w-full items-center gap-3 rounded-sm p-3 text-left transition-colors hover:bg-white/15 cursor-pointer"
                 >
@@ -27,12 +26,12 @@ const { title, ogp } = data.pages.links
                     <Icon name={link.icon} class="copy-icon-default w-5 h-5 text-ink transition-colors group-hover:text-[var(--theme-color)]" />
                     <Icon name="ri:check-line" class="copy-icon-copied hidden absolute inset-0 w-5 h-5 text-accent" />
                   </span>
-                  <span class="flex items-baseline gap-2">
-                    <span class="text-sm font-medium text-ink transition-colors group-hover:text-[var(--theme-color)]">{link.title}</span>
-                    <span class="copy-handle text-xs text-ink-sub" data-handle={link.handle}>{link.handle}</span>
+                  <span class="flex min-w-0 flex-1 items-baseline gap-2">
+                    <span class="shrink-0 whitespace-nowrap text-sm font-medium text-ink transition-colors group-hover:text-[var(--theme-color)]">{link.title}</span>
+                    <span class="copy-handle min-w-0 truncate text-xs text-ink-sub" data-handle={link.handle}>{link.handle}</span>
                   </span>
                   {link.description && (
-                    <span class="ml-auto max-w-[40%] truncate pl-3 text-right text-xs text-ink-sub">{link.description}</span>
+                    <span class="ml-auto hidden max-w-[40%] shrink-0 truncate pl-3 text-right text-xs text-ink-sub sm:block">{link.description}</span>
                   )}
                 </button>
               ) : (
@@ -44,12 +43,12 @@ const { title, ogp } = data.pages.links
                   class="group flex items-center gap-3 p-3 rounded-sm transition-colors hover:bg-white/15"
                 >
                   <Icon name={link.icon} class="w-5 h-5 text-ink transition-colors group-hover:text-[var(--theme-color)]" />
-                  <span class="flex items-baseline gap-2">
-                    <span class="text-sm font-medium text-ink transition-colors group-hover:text-[var(--theme-color)]">{link.title}</span>
-                    <span class="text-xs text-ink-sub">{link.handle}</span>
+                  <span class="flex min-w-0 flex-1 items-baseline gap-2">
+                    <span class="shrink-0 whitespace-nowrap text-sm font-medium text-ink transition-colors group-hover:text-[var(--theme-color)]">{link.title}</span>
+                    <span class="min-w-0 truncate text-xs text-ink-sub">{link.handle}</span>
                   </span>
                   {link.description && (
-                    <span class="ml-auto max-w-[40%] truncate pl-3 text-right text-xs text-ink-sub">{link.description}</span>
+                    <span class="ml-auto hidden max-w-[40%] shrink-0 truncate pl-3 text-right text-xs text-ink-sub sm:block">{link.description}</span>
                   )}
                 </a>
               )}
@@ -60,6 +59,6 @@ const { title, ogp } = data.pages.links
     </div>
   </main>
   <script>
-    import '../scripts/copy-email.ts'
+    import '../scripts/copy-link.ts'
   </script>
 </BaseLayout>
