@@ -13,9 +13,12 @@ import data from '../data/data.json'
 interface Props {
   title: string
   description?: string
+  image?: string
+  noindex?: boolean
 }
 
-const { title, description = "Fallback" } = Astro.props
+const { title, description = "Fallback", image, noindex = false } = Astro.props
+const ogImageUrl = image ? new URL(image, Astro.site) : undefined
 ---
 <html lang="ja">
 <head>
@@ -27,9 +30,22 @@ const { title, description = "Fallback" } = Astro.props
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
   <meta name="description" content={description} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:type" content="website" /> </head>
+  <meta property="og:type" content="website" />
+  {ogImageUrl && (
+    <>
+      <meta property="og:image" content={ogImageUrl} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImageUrl} />
+    </>
+  )}
+</head>
 <body>
   <Image
     src={bgImg}

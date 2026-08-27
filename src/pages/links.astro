@@ -5,7 +5,7 @@ import { Icon } from 'astro-icon/components'
 
 const { title, ogp } = data.pages.links
 ---
-<BaseLayout title={title} description={ogp.description}>
+<BaseLayout title={title} description={ogp.description} image={ogp.image}>
   <main class="min-h-[calc(100vh_-_var(--footer-h))] flex items-center px-6 md:px-16 py-24">
     <div class="glass-card rounded-xl p-8 max-w-xl w-full">
       <span class="text-xs tracking-widest text-ink-sub uppercase">Links</span>

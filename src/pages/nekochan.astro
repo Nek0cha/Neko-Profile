@@ -2,11 +2,12 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import data from '../data/data.json'
 
-const { title, ogp } = data.pages.nekochan
+const { title, message, ogp } = data.pages.nekochan
 ---
-<BaseLayout title={title} description={ogp.description}>
+<BaseLayout title={title} description={ogp.description} image={ogp.image} noindex>
   <main class="min-h-[calc(100vh_-_var(--footer-h))] flex items-center justify-center px-6 md:px-16">
-    <pre class="text-ink select-none">
+    <div class="glass-card flex w-full max-w-md flex-col items-center gap-4 rounded-xl p-8 md:p-12">
+      <pre class="select-none text-sm leading-tight text-ink md:text-base">
 ⠀　　　　　　＿＿
 　　　　　／＞　　フ
 　　　　　| 　_　 _彡
@@ -17,7 +18,8 @@ const { title, ogp } = data.pages.nekochan
 　／￣|　　 |　|　|
 　| (￣ヽ＿_ヽ_)__)
 　＼二つ
-    </pre>
+      </pre>
+      <p class="select-none text-center text-sm text-ink-sub md:text-base">{message}</p>
+    </div>
   </main>
 </BaseLayout>
-

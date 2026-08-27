@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import data from '../data/data.json'
+
+const { title, message, ogp } = data.pages.notFound
+---
+<BaseLayout title={title} description={ogp.description} image={ogp.image}>
+  <main class="flex min-h-[calc(100vh_-_var(--footer-h))] items-center justify-center px-6 md:px-16">
+    <div class="glass-card flex w-full max-w-md flex-col items-center gap-4 rounded-xl p-8 text-center md:p-12">
+      <span class="text-xs tracking-widest text-ink-sub uppercase">Error</span>
+      <h1 class="text-5xl font-bold text-ink">404</h1>
+      <p class="select-none text-sm text-ink-sub md:text-base">{message}</p>
+      <a
+        href="/"
+        draggable="false"
+        class="group relative mt-2 select-none rounded-sm px-4 py-2 text-sm font-medium text-white transition-transform duration-300 hover:scale-105"
+      >
+        <span class="absolute inset-0 overflow-hidden rounded-sm">
+          <span class="absolute inset-0 bg-accent transition-transform duration-300 ease-out group-hover:translate-x-full"></span>
+        </span>
+        <span class="pointer-events-none absolute inset-0 rounded-sm border border-accent"></span>
+        <span class="relative transition-colors duration-300 group-hover:text-accent">Homeへ戻る</span>
+      </a>
+    </div>
+  </main>
+</BaseLayout>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ny4n.net/sitemap-index.xml

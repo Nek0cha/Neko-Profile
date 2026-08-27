@@ -5,7 +5,7 @@
   "statusText": "さらば夏休み",
   "detailedBio": [
     "名前: ねこ",
-    "22 y/o",
+    "🫠が好きです",
     "趣味はプログラミングです",
     "ゲームも好きです",
     "Discordで友達募集中です"
@@ -147,10 +147,20 @@
     },
     "nekochan": {
       "title": "Nekochan | ねこちゃん",
+      "message": "ねこちゃんのひみつの部屋",
       "ogp": {
         "title": "Nekochan | ねこちゃん",
-        "description": "👀",
+        "description": "見つけちゃったね",
         "image": "/images/ogp/secret.png"
+      }
+    },
+    "notFound": {
+      "title": "404 | ページが見つかりません",
+      "message": "迷子になっちゃったね",
+      "ogp": {
+        "title": "404 | ページが見つかりません",
+        "description": "お探しのページは見つかりませんでした",
+        "image": "/images/ogp/index.png"
       }
     }
   }
