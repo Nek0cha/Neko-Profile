@@ -5,7 +5,7 @@ import { Icon } from 'astro-icon/components'
 
 const { title, ogp } = data.pages.about
 ---
-<BaseLayout title={title} description={ogp.description}>
+<BaseLayout title={title} description={ogp.description} image={ogp.image}>
   <main class="min-h-screen flex-col items-center px-6 md:px-16">
 
     <section data-scroll-top class="relative min-h-screen flex items-center px-6 md:px-16">
