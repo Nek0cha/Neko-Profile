@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import data from '../data/data.json'
+
+const { title, ogp } = data.pages.nekochan
+---
+<BaseLayout title={title} description={ogp.description}>
+  <main class="min-h-[calc(100vh_-_var(--footer-h))] flex items-center justify-center px-6 md:px-16">
+    <pre class="text-ink select-none">
+⠀　　　　　　＿＿
+　　　　　／＞　　フ
+　　　　　| 　_　 _彡
+　 　　　／`ミ＿xノ
+　　 　 /　　　 　 |
+　　　 /　 ヽ　　 ﾉ
+　 　 │　　|　|　|
+　／￣|　　 |　|　|
+　| (￣ヽ＿_ヽ_)__)
+　＼二つ
+    </pre>
+  </main>
+</BaseLayout>
+

@@ -1,0 +1,157 @@
+{
+  "name": "ねこ",
+  "avatar": "/images/avatar.png",
+  "bio": "仲の良い友達が欲しいです。好きな絵文字は🫠です。",
+  "statusText": "さらば夏休み",
+  "detailedBio": [
+    "名前: ねこ",
+    "22 y/o",
+    "趣味はプログラミングです",
+    "ゲームも好きです",
+    "Discordで友達募集中です"
+  ],
+  "links": [
+    {
+      "title": "Twitter",
+      "description": "時々なにかつぶやきます",
+      "url": "https://x.com/zz223_",
+      "icon": "simple-icons:twitter",
+      "handle": "@zz223_",
+      "themeColor": "#59C4FF"          
+    },
+    {
+      "title": "Discord",
+      "description": "気軽に入ってください",
+      "url": "https://discord.gg/QfekXPf74r",
+      "icon": "simple-icons:discord",
+      "handle": "Neko's Server",
+      "themeColor": "#5B64CF"
+    },
+    {
+      "title": "GitHub",
+      "description": "作ったものを公開してます",
+      "url": "https://github.com/Nek0cha",
+      "icon": "simple-icons:github",
+      "handle": "Nek0cha",
+      "themeColor": "#E8E8E8"
+    },
+    {
+      "title": "Note",
+      "description": "日記書いてます",
+      "url": "https://note.com/nyaffle",
+      "icon": "simple-icons:note",
+      "handle": "nyaffle",
+      "themeColor": "#E8E8E8"
+    },
+    {
+      "title": "タイッツー",
+      "description": "時々つぶやきます",
+      "url": "https://taittsuu.com/users/ny4n",
+      "icon": "ri:chat-3-line",
+      "handle": "@ny4n",
+      "themeColor": "#525252"
+    },
+    {
+      "title": "Instagram",
+      "description": "何も投稿してないです",
+      "url": "https://www.instagram.com/nekonyaffle/",
+      "icon": "simple-icons:instagram",
+      "handle": "@nekonyaffle",
+      "themeColor": "#ea16c0"
+    },
+    {
+      "title": "メール",
+      "description": "何かあればここまで",
+      "url": "mailto:contact@ny4n.net",
+      "icon": "material-symbols:mail-outline",
+      "handle": "contact@ny4n.net",
+      "themeColor": "#5C5C5C"
+    }
+  ],
+  "works": [
+    {
+      "title": "AdvancedNewTab",
+      "description": "新しいタブをカスタマイズできるChrome拡張機能",
+      "url": "https://newtab.ny4n.net/"
+    },
+    {
+      "title": "Neko Tools",
+      "description": "ブラウザで使える便利ツール",
+      "url": "https://tools.ny4n.net/"
+    },
+    {
+      "title": "QRコード生成",
+      "description": "見た目にこだわりすぎたQRコード生成/読み取りツール",
+      "url": "https://qr.eina.dev/"
+    },
+    {
+      "title": "Rainy Sounds",
+      "description": "勉強とかに集中できそうなやつです",
+      "url": "https://rainysounds.ny4n.net/"
+    },
+    {
+      "title": "ダサいサイト",
+      "description": "ダサすぎる架空企業の採用ページです",
+      "url": "https://neko.ny4n.net/recruit/"
+    },
+    {
+      "title": "飯テロ",
+      "description": "友達がGoogle Sites使ってて面白そうだったので作りました",
+      "url": "https://meshitero.ny4n.net/"
+    },
+    {
+      "title": "夜更かしの理由メーカー",
+      "description": "夜更かしの言い訳を考えるのが面倒なときに。",
+      "url": "https://yofukashi.ny4n.net/"
+    },
+    {
+      "title": "サブ垢のサイト",
+      "description": "Jsonです",
+      "url": "https://eina.dev/"
+    },
+    {
+      "title": "Infinity Melting",
+      "description": "いんふぃにてぃ めるてぃんぐ。",
+      "url": "https://infinity-melting.ny4n.net/"
+    },
+    {
+      "title": "ScreenshotToClipboard MOD",
+      "description": "Minecraft のスクリーンショットを自動でクリップボードにコピーするMOD",
+      "url": "https://modrinth.com/mod/sstoclip"
+    }
+  ],
+  "pages": {
+    "about": {
+      "title": "About | ねこのプロフィールサイト",
+      "ogp": {
+        "title": "About | ねこのプロフィールサイト",
+        "description": "ねこのメインプロフィールページ",
+        "image": "/images/ogp/index.png"
+      }
+    },
+    "links": {
+      "title": "Links | SNS・リンク一覧",
+      "ogp": {
+        "title": "Links | SNS・リンク一覧",
+        "description": "SNSや各プラットフォームのアカウント一覧",
+        "image": "/images/ogp/links.png"
+      }
+    },
+    "works": {
+      "title": "Works | 作ったもの一覧",
+      "ogp": {
+        "title": "Works | 作ったもの一覧",
+        "description": "これまでに制作したプロジェクトや成果物一覧",
+        "image": "/images/ogp/works.png"
+      }
+    },
+    "nekochan": {
+      "title": "Nekochan | ねこちゃん",
+      "ogp": {
+        "title": "Nekochan | ねこちゃん",
+        "description": "👀",
+        "image": "/images/ogp/secret.png"
+      }
+    }
+  }
+}

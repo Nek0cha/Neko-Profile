@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import data from '../data/data.json'
+import { Icon } from 'astro-icon/components'
+
+const { title, ogp } = data.pages.works
+---
+<BaseLayout title={title} description={ogp.description}>
+  <main class="min-h-[calc(100vh_-_var(--footer-h))] px-6 md:px-16 py-24">
+    <div class="max-w-3xl">
+      <span class="text-xs tracking-widest text-ink-sub uppercase">Works</span>
+      <h1 class="text-2xl font-bold text-ink mt-2 mb-8">創作物一覧</h1>
+
+      <div class="grid gap-4 md:grid-cols-2">
+        {data.works?.map((work: { title: string; description: string; url?: string }) => (
+          <a 
+            href={work.url ?? '#'}
+            target={work.url ? '_blank' : undefined}
+            rel={work.url ? 'noopener noreferrer' : undefined}
+            class="glass-card rounded-xl p-5 flex flex-col min-h-[155px] transition-transform duration-300 hover:scale-[1.02]"
+          >
+            <h3 class="font-bold text-ink">{work.title}</h3>
+            <p class="mt-2 text-sm text-ink-sub leading-relaxed line-clamp-3">{work.description}</p>
+            {work.url && (
+              <div class="mt-auto pt-3 flex items-center justify-between gap-2">
+                <span class="text-xs text-ink-sub truncate">{new URL(work.url).hostname}</span>
+                <Icon name="ri:arrow-right-up-line" class="w-4 h-4 text-ink-sub flex-shrink-0" />
+              </div>
+            )}
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
+</BaseLayout>

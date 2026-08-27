@@ -1,0 +1,9 @@
+---
+const year = new Date().getFullYear()
+import data from '../data/data.json'
+---
+<footer class="backdrop-blur-sm bg-black/75 h-16 flex items-center justify-center relative z-10 px-6 md:px-16 border-t border-line">
+  <p class="text-xs text-ink-sub text-center select-none invert">
+    &copy; {year} {data.name}. All rights reserved.
+  </p>
+</footer>

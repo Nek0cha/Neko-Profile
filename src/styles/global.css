@@ -1,5 +1,83 @@
 @import "tailwindcss";
 
+:root {
+  --scroll-progress: 0;
+  --footer-h: 4rem; /* Footer.astro の h-16 と合わせる */
+  --scrollbar-thumb: rgba(45, 61, 74, 0.35); /* --color-accent の半透明版 */
+  --scrollbar-thumb-hover: rgba(45, 61, 74, 0.55);
+}
+
 @theme {
   --font-sans: "Zen Kaku Gothic New", sans-serif;
+  --color-bg: #FAFAF8;
+  --color-ink: #0A0A0A;
+  --color-ink-sub: #262626;
+  --color-accent: #2D3D4A;
+  --color-line: #E5E4DF;
+}
+
+/* iOS風の細くて半透明なスクロールバー
+   ※Chrome/Edgeは標準の scrollbar-color を ::-webkit-scrollbar 系より優先するので、
+   　両方とも同じ --scrollbar-thumb 変数を参照させて色がズレないようにしてる */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+/* OverlayScrollbars用のカスタムテーマ（JS初期化後はこっちが表示される）
+   ※ .os-scrollbar 側の既定値と詳細度が同じで読み込み順で負けるので、
+   　 .os-scrollbar.os-theme-neko で詳細度を上げて確実に勝たせてる */
+.os-scrollbar.os-theme-neko {
+  --os-size: 6px;
+  --os-padding-perpendicular: 2px;
+  --os-padding-axis: 2px;
+  --os-track-border-radius: 9999px;
+  --os-track-bg: transparent;
+  --os-track-bg-hover: transparent;
+  --os-track-bg-active: transparent;
+  --os-handle-border-radius: 9999px;
+  --os-handle-bg: var(--scrollbar-thumb);
+  --os-handle-bg-hover: var(--scrollbar-thumb-hover);
+  --os-handle-bg-active: var(--scrollbar-thumb-hover);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  -webkit-user-drag: none;
+}
+
+.glass-card {
+  background-color: rgba(255, 255, 255, 0.140);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.bg-blur-scroll {
+  filter: blur(calc(var(--scroll-progress) * 20px));
+  transition: filter 0.1s linear;
 }
