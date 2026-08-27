@@ -132,9 +132,9 @@
   ],
   "pages": {
     "about": {
-      "title": "About | ねこのプロフィールサイト",
+      "title": "Home | ねこのプロフィールサイト",
       "ogp": {
-        "title": "About | ねこのプロフィールサイト",
+        "title": "Home | ねこのプロフィールサイト",
         "description": "ねこのメインプロフィールページ",
         "image": "/images/ogp/index.png"
       }

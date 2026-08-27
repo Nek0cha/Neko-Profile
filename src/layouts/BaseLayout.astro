@@ -53,10 +53,12 @@ const ogImageUrl = image ? new URL(image, Astro.site) : undefined
     src={bgImg}
     alt=""
     class="fixed inset-0 w-full h-full object-cover -z-10 scale-110 bg-blur-scroll"
+    transition:persist
+    transition:name="bg-image"
   />
-  <Header />
+  <Header transition:persist />
   <slot />
-  <Footer />
+  <Footer transition:persist />
   <script>
     import '../scripts/lenis-init.ts'
     import '../scripts/scrollbar-init.ts'
