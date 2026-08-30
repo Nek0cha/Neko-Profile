@@ -69,6 +69,14 @@
       "themeColor": "#ea16c0"
     },
     {
+      "title": "欲しいものリスト",
+      "description": "高額なものが多いです",
+      "url": "https://www.amazon.jp/hz/wishlist/ls/2X5CQ2L7M6DV8",
+      "icon": "ri:shopping-bag-4-line",
+      "handle": "誕生日は6/5です",
+      "themeColor": "#ff6200"
+    },
+    {
       "title": "メール",
       "description": "何かあればここまで",
       "url": "contact@ny4n.net",
