@@ -103,6 +103,11 @@
       "url": "https://qr.eina.dev/"
     },
     {
+      "title": "カラーパレット",
+      "description": "画像から色の抽出と既存の色からの抽出ができます",
+      "url": "https://color.eina.dev/"
+    },
+    {
       "title": "Rainy Sounds",
       "description": "勉強とかに集中できそうなやつです",
       "url": "https://rainysounds.ny4n.net/"
@@ -121,11 +126,6 @@
       "title": "夜更かしの理由メーカー",
       "description": "夜更かしの言い訳を考えるのが面倒なときに。",
       "url": "https://yofukashi.ny4n.net/"
-    },
-    {
-      "title": "サブ垢のサイト",
-      "description": "Jsonです",
-      "url": "https://eina.dev/"
     },
     {
       "title": "Infinity Melting",
