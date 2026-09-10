@@ -14,18 +14,18 @@
     {
       "title": "Twitter",
       "description": "時々なにかつぶやきます",
-      "url": "https://x.com/TimeNotForMe",
+      "url": "https://x.com/zz223_",
       "icon": "simple-icons:twitter",
-      "handle": "@TimeNotForMe",
+      "handle": "@zz223_",
       "themeColor": "#59C4FF"          
     },
     {
       "title": "Discord",
       "description": "友達募集中です",
-      "url": "empty_time.for_me",
+      "url": "nyaffle.",
       "copy": true,
       "icon": "simple-icons:discord",
-      "handle": "empty_time.for_me",
+      "handle": "nyaffle.",
       "themeColor": "#5B64CF"
     },
     {
