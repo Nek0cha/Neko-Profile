@@ -7,7 +7,7 @@
     "ねこっていいます",
     "🫠が好きです",
     "趣味はプログラミングです TypeScriptとかJavaがメインです",
-    "ゲームも好きです マイクラとかNTEとか原神とかスターレイルしてます",
+    "ゲームも好きです マイクラとかNTEとかしてます",
     "Discordで友達募集中です！！友達になろう！！"
   ],
   "links": [
@@ -42,14 +42,6 @@
       "url": "https://github.com/Nek0cha",
       "icon": "simple-icons:github",
       "handle": "Nek0cha",
-      "themeColor": "#E8E8E8"
-    },
-    {
-      "title": "Note",
-      "description": "日記書いてます",
-      "url": "https://note.com/nyaffle",
-      "icon": "simple-icons:note",
-      "handle": "nyaffle",
       "themeColor": "#E8E8E8"
     },
     {
@@ -116,16 +108,6 @@
       "title": "Infinity Melting",
       "description": "いんふぃにてぃ めるてぃんぐ。",
       "url": "https://infinity-melting.ny4n.net/"
-    },
-    {
-      "title": "ScreenshotToClipboard MOD",
-      "description": "Minecraft のスクリーンショットを自動でクリップボードにコピーするMOD",
-      "url": "https://modrinth.com/mod/sstoclip"
-    },
-    {
-      "title": "Neko Tools",
-      "description": "ブラウザで使える便利ツール",
-      "url": "https://tools.ny4n.net/"
     }
   ],
   "pages": {
